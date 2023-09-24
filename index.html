@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Just for today</title>
+  <meta name="description" content="Just for today">
+  <meta name="NA" content="SitePoint">
+
+  <meta property="og:title" content="Just for today">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aaescazu.github.io/">
+  <meta property="og:description" content="Just for today">
+  <meta property="og:image" content="image.png">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>  
+  <div id="myData" style="max-width:600px; margin: auto;"></div>
+  <script>
+      fetch('days.json')
+          .then(function (response) {
+              return response.json();
+          })
+          .then(function (data) {
+              appendData(data);
+          })
+          .catch(function (err) {
+              console.log('error: ' + err);
+          });
+  
+      function appendData(data) {
+          let mainContainer = document.getElementById("myData");
+            let div = document.createElement("div");
+            div.innerHTML = '<table><tr><th style="text-align:left"> ' + data[2].title + '</th><th style="text-align:right">' + data[2].day + '</th><tr><td colspan="2" style="border-top:1px solid black"><br/><i>' + data[2].quote + '</i><br/></td></tr><tr><td colspan="2" style="text-align:right"><br/><b>' + data[2].source + '</b></td></tr><tr><td colspan="2" style="text-align:center"><br/>❖<br/><br/></td></tr><tr><td colspan="2" style="text-align:justify;">' + data[2].reflection + '</td></tr><tr><td colspan="2"  style="text-align:center"><br/><br/>❖<br/><br/></td></tr><tr><td colspan="2" style="text-align:justify;"><b>Just for today:</b> ' + data[2].today + '</td></tr></table>';
+            mainContainer.appendChild(div);
+      }
+  </script>
+  <script>
+    var now = new Date();
+    var start = new Date(now.getFullYear(), 0, 0);
+    var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+    var oneDay = 1000 * 60 * 60 * 24;
+    var day = Math.floor(diff / oneDay);
+    console.log('Day of year: ' + day);
+  </script>
+
+</body>
+</html>
