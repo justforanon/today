@@ -39,7 +39,7 @@
       function appendData(data) {
           let mainContainer = document.getElementById("myData");
             let div = document.createElement("div");
-            div.innerHTML = '<table><tr><th style="text-align:left"> ' + data[3].title + '</th><th style="text-align:right">' + data[3].day + '</th><tr><td colspan="2" style="border-top:1px solid black"><br/><i>' + data[3].quote + '</i><br/></td></tr><tr><td colspan="2" style="text-align:right"><br/><b>' + data[3].source + '</b></td></tr><tr><td colspan="2" style="text-align:center"><br/>❖<br/><br/></td></tr><tr><td colspan="2" style="text-align:justify;">' + data[3].reflection + '</td></tr><tr><td colspan="2"  style="text-align:center"><br/><br/>❖<br/><br/></td></tr><tr><td colspan="2" style="text-align:justify;"><b>Just for today:</b> ' + data[3].today + '</td></tr></table>';
+            div.innerHTML = '<table><tr><th style="text-align:left"> ' + data[3].title + '</th><th style="text-align:right">' + data[3].day + '</th><tr><td colspan="2" style="border-top:1px solid black"><br/><i>' + data[3].quote + '</i><br/></td></tr><tr><td colspan="2" style="text-align:right"><br/><b>' + data[3].source + '</b></td></tr><tr><td colspan="2" style="text-align:center"><br/>❖<br/><br/></td></tr><tr><td colspan="2" style="text-align:justify;">' + data[3].reflection + '</td></tr><tr><td colspan="2"  style="text-align:center"><br/><br/>❖<br/><br/></td></tr><tr><td colspan="2" style="text-align:justify;"><b>Just for today:</b> ' + data[3].today + '</td></tr></table><br/><br/>© NAWS';
             mainContainer.appendChild(div);
       }
   </script>
